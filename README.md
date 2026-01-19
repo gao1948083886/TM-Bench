@@ -1,7 +1,3 @@
-根据您的要求，我为您重新撰写了 GitHub 的 README 文件。这份版本明确了该项目作为 **ACL 2026 投稿**的身份，并完整集成了您提供的 LaTeX 数据表格，同时保留了学术严谨性和对完整数据集释放时间的说明。
-
----
-
 # TM-Bench: Benchmarking Large Language Models on Low-resource Traditional Mongolian
 
 > **Note**: This repository is dedicated to our submission for **ACL 2026**.
