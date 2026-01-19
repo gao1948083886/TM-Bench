@@ -1,2 +1,69 @@
-# TM-Bench
-The benchmark used to evaluate the LLMs capabilities on Traditional Mongolian
+# TM-Bench: Benchmarking LLMs on Traditional Mongolian
+
+**TM-Bench** 是首个针对**传统蒙古文（Traditional Mongolian）**大规模语言模型（LLMs）能力的综合性评估基准 。它涵盖了自然语言理解（NLU）和自然语言生成（NLG）的 7 大核心任务，包含共计 22,657 个高质量实例 。
+
+## 📝 项目简介
+
+由于高质量数据集的匮乏，传统蒙古文在数字时代面临着严重的“语言不平等”现象 。TM-Bench 通过以下三种混合策略构建，确保了评估的严谨性与文化相关性：
+
+1. 
+**翻译自适应 (Translation-based Adaptation)**：迁移成熟的英文基准并进行严格专家校对 。
+
+
+2. 
+**专家原创 (Expert-Original Authoring)**：由蒙古语专家基于民族文化、历史及社会实践原创 。
+
+
+3. 
+**半自动综合 (Semi-automated Synthesis)**：利用语料驱动的流水线从原生文本中提取并生成任务数据 。
+
+
+
+## 📂 数据集说明
+
+当前仓库包含 TM-Bench 的**部分公开样本**，旨在供研究人员预览数据格式及任务类型。
+
+### 任务组成一览
+
+目前已上传的文件（JSON 格式）包括 [参考你发送的截图]：
+
+* 
+**NLU 任务**：`TM-AGNews` (主题分类), `TM-MRPC` (语义相似度), `TM-SST2` (情感分析), `TM-MNLI`/`RTE`/`QNLI` (自然语言推理), `TM-HellaSwag`/`MMLU`/`ARC` (多选推理) 。
+
+
+* 
+**NLG 任务**：`TM-CMMT` (中蒙机器翻译), `TM-XSum` (文本摘要) 。
+
+
+
+### 关于完整版数据集
+
+> **⚠️ 重要提示**：
+> 为了遵守学术惯例并确保同行评审的公正性，本仓库目前仅公开部分数据样本。**完整的数据集（22,657 个实例）及配套代码将在论文被正式录用（Accepted）后立即全面开放。** 感谢您的理解与关注！
+
+## 🚀 评测结果简述
+
+根据我们的实验，目前的通用大模型（如 Llama 3.1, Qwen 3, Gemma 3）在传统蒙古文任务上表现普遍欠佳，许多任务甚至低于随机水平 。
+
+* 
+**NLU 最高准确率**：仅约 36.81% (Gemma3-27B) 。
+
+
+* 
+**NLG 表现**：存在严重的语义崩溃，BLEU 分数普遍低于 10 。
+
+
+
+## 📄 引用信息
+
+如果您在研究中使用了本基准，请引用我们的工作：
+
+```bibtex
+@article{tm_bench2025,
+  title={TM-Bench: Benchmarking Large Language Models on Low-resource Traditional Mongolian},
+  author={Anonymous Authors},
+  journal={ACL Submission},
+  year={2025}
+}
+
+```
