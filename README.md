@@ -1,44 +1,81 @@
-# TM-Bench: Benchmarking LLMs on Traditional Mongolian
+根据您的要求，我为您重新撰写了 GitHub 的 README 文件。这份版本明确了该项目作为 **ACL 2026 投稿**的身份，并完整集成了您提供的 LaTeX 数据表格，同时保留了学术严谨性和对完整数据集释放时间的说明。
 
-**TM-Bench** 是首个针对**传统蒙古文**大规模语言模型能力的综合性评估基准。它涵盖了自然语言理解（NLU）和自然语言生成（NLG）的 7 大核心任务，包含共计 22,657 个高质量实例 。
+---
+
+# TM-Bench: Benchmarking Large Language Models on Low-resource Traditional Mongolian
+
+> **Note**: This repository is dedicated to our submission for **ACL 2026**.
+
+**TM-Bench** 是首个针对**传统蒙古文 (Traditional Mongolian)** 大规模语言模型能力的综合性评估基准 。它旨在弥补低资源语言在系统性评估框架上的缺失，涵盖了自然语言理解 (NLU) 和自然语言生成 (NLG) 的核心任务，包含共计 **22,657** 个高质量实例 。
 
 ## 📝 项目简介
 
 由于高质量数据集的匮乏，传统蒙古文在数字时代面临着严重的“语言不平等”现象 。TM-Bench 通过以下三种混合策略构建，确保了评估的严谨性与文化相关性：
 
-1. **翻译自适应**：迁移成熟的英文基准并进行严格专家校对 。
-2. **专家原创**：由蒙古语专家基于民族文化、历史及社会实践原创 。
-3. **半自动综合**：利用语料驱动的流水线从原生文本中提取并生成任务数据 。
+1. 
+**翻译自适应 (Translation-based Adaptation)**：迁移成熟的英文基准并进行严格专家校对 。
 
 
-## 📂 数据集说明
+2. 
+**专家原创 (Expert-Original Authoring)**：由蒙古语专家基于民族文化、历史及社会实践原创，增强本地化相关性 。
 
-当前仓库包含 TM-Bench 的**部分公开样本**，旨在供研究人员预览数据格式及任务类型。
 
-### 任务组成一览
-
-目前已上传的文件（JSON 格式）包括：
-
-* 
-**NLU 任务**：`TM-AGNews` (主题分类), `TM-MRPC` (语义相似度), `TM-SST2` (情感分析), `TM-MNLI`/`RTE`/`QNLI` (自然语言推理), `TM-HellaSwag`/`MMLU`/`ARC` (多选推理) 。
-
-* 
-**NLG 任务**：`TM-CMMT` (中蒙机器翻译), `TM-XSum` (文本摘要) 。
+3. 
+**半自动综合 (Semi-automated Synthesis)**：利用语料驱动的流水线从原生文本中提取并生成任务数据，实现大规模扩展 。
 
 
 
-### 关于完整版数据集
+---
+
+## 📂 数据集统计 (Detailed Statistics)
+
+本基准涵盖了 7 大类任务，跨越科技、法律、民俗及日常对话等多个领域。以下是 TM-Bench 各子数据集的详细统计信息 ：
+
+| Dataset | Task Type | Total | Source Prop. (Trans:Exp:Semi) | Domain | Avg Len |
+| --- | --- | --- | --- | --- | --- |
+| **NLU Tasks** |  |  |  |  |  |
+| TM-AGNews | Topic Clf. | 2,100 | 0.55 : 0.15 : 0.30 | Tech, Sports, Grassland Ecology | 36.17 |
+| TM-MRPC | Sem. Sim. | 2,100 | 0.50 : 0.20 : 0.30 | Encyclopedia, Folklore Etiquette | 47.85 |
+| TM-SST2 | Sentiment | 2,200 | 0.45 : 0.20 : 0.35 | Movies, Folk Art | 9.72 |
+| TM-MNLI | NLI | 2,094 | 0.52 : 0.13 : 0.35 | Fiction, Gov. Documents, History | 32.46 |
+| TM-RTE | NLI | 2,093 | 0.60 : 0.10 : 0.30 | News, Ethnic Policy, Folklore Etiquette | 54.09 |
+| TM-QNLI | NLI | 2,075 | 0.58 : 0.12 : 0.30 | Wiki, Ethnic Geography | 44.57 |
+| TM-HellaSwag | MCQA | 2,000 | 0.48 : 0.15 : 0.37 | General Knowledge, Nomadic Life | 134.42 |
+| TM-MMLU | MCQA | 2,000 | 0.51 : 0.14 : 0.35 | Humanities, Ethnic Medicine | 71.87 |
+| TM-ARC | MCQA | 2,000 | 0.53 : 0.12 : 0.35 | Basic Science, Local Textbooks | 45.05 |
+| **NLG Tasks** |  |  |  |  |  |
+| TM-CMMT | Translation | 1,995 | 0.56 : 0.14 : 0.30 | Daily Dialog, Ethnic Literature | 25.78 |
+| TM-XSum | Summ. | 2,000 | 0.47 : 0.18 : 0.35 | News, Pastoral Culture | 90.21 |
+| **Total** | --- | **22,657** | --- | --- | --- |
+
+> 注：带有标记的任务领域包含由专家撰写的关于传统蒙古文化和游牧文明的内容 。
+> 
+> 
+
+---
+
+## 📂 仓库说明与开放计划
+
+当前仓库包含 TM-Bench 的**部分公开样本**，旨在供研究人员预览数据格式。
 
 > **⚠️ 重要提示**：
-> 为了遵守学术惯例并确保同行评审的公正性，本仓库目前仅公开部分数据样本。**完整的数据集（22,657 个实例）及配套代码将在论文被正式录用后立即全面开放。** 感谢您的理解与关注！
+> 为遵守学术惯例并确保同行评审的公正性，本仓库目前仅公开代表性数据子集。**完整的数据集及配套评测代码将在论文被录用 (Accepted) 后立即全面开放。** 感谢您的关注。
 
 ## 🚀 评测结果简述
 
-根据我们的实验，目前的通用大模型（如 Llama 3.1, Qwen 3, Gemma 3）在传统蒙古文任务上表现普遍欠佳，许多任务甚至低于随机水平。
+实验结果表明，目前的通用大模型在处理传统蒙古文时面临巨大挑战 ：
 
 * 
-**NLU 最高准确率**：仅约 36.81% (Gemma3-27B) 。
+**理解能力受限**：NLU 任务最高准确率仅约 **36.81%** (Gemma3-27B)，许多模型表现甚至低于 25% 的随机基准 。
 
 
 * 
-**NLG 表现**：存在严重的语义崩溃，BLEU 分数普遍低于 10 。
+**生成能力崩溃**：在翻译与摘要任务中，模型普遍存在语义崩溃现象，BLEU 分数通常低于 **10** 。
+
+
+
+这些发现证明了针对蒙古文进行专门形态建模和语料扩展的紧迫性 。
+
+---
+
+**您还需要我为您生成一个专门用于 GitHub 上传的 README.md 原始 Markdown 源代码文件吗？**
