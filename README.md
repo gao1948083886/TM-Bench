@@ -5,7 +5,7 @@
 > 
 > 
 
-**TM-Bench** is the first comprehensive evaluation benchmark specifically designed for **Traditional Mongolian** large language models. It aims to bridge the evaluation gap for low-resource languages by covering 7 core tasks across Natural Language Understanding (NLU) and Generation (NLG), comprising a total of **22,657** high-quality instances. 
+**TM-Bench** is the first comprehensive benchmark specifically designed to evaluate the **Traditional Mongolian** capabilities of Large Language Models (LLMs). It aims to bridge the evaluation gap for low-resource languages by covering 7 core tasks across Natural Language Understanding (NLU) and Generation (NLG), comprising a total of **22,657** high-quality instances.
 
 ## 📝 Introduction
 
