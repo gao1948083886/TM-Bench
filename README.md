@@ -1,7 +1,3 @@
-Here is the professional English translation of your `README.md`. I have optimized the formatting to ensure it meets the standards of a top-tier NLP conference repository.
-
----
-
 # TM-Bench: Benchmarking Large Language Models on Low-resource Traditional Mongolian
 
 > 
@@ -15,16 +11,11 @@ Here is the professional English translation of your `README.md`. I have optimiz
 
 The scarcity of high-quality datasets has led to significant "linguistic inequality" for Traditional Mongolian in the digital era. TM-Bench is constructed using a hybrid strategy to ensure rigorous evaluation and cultural relevance: 
 
-1. 
-**Translation-based Adaptation**: Mature English benchmarks are migrated and subjected to rigorous expert proofreading. 
+1. **Translation-based Adaptation**: Mature English benchmarks are migrated and subjected to rigorous expert proofreading. 
 
+2. **Expert-Original Authoring**: Original instances are authored by Mongolian language experts based on ethnic heritage, history, and social practices. 
 
-2. 
-**Expert-Original Authoring**: Original instances are authored by Mongolian language experts based on ethnic heritage, history, and social practices. 
-
-
-3. 
-**Semi-automated Synthesis**: Task-specific data is synthesized from high-value native texts using a corpus-driven pipeline. 
+3. **Semi-automated Synthesis**: Task-specific data is synthesized from high-value native texts using a corpus-driven pipeline. 
 
 
 
@@ -67,12 +58,10 @@ This repository currently contains **representative samples** of TM-Bench for pr
 
 Experimental results indicate that current representative LLMs face significant challenges in Traditional Mongolian: 
 
-* 
-**Limited Understanding**: The highest NLU accuracy achieved was only ~**36.81%** (Gemma3-27B), with many models performing near or below the 25% random baseline. 
+* **Limited Understanding**: The highest NLU accuracy achieved was only ~**36.81%** (Gemma3-27B), with many models performing near or below the 25% random baseline. 
 
 
-* 
-**Generation Collapse**: In translation and summarization tasks, models exhibit severe semantic collapse, with BLEU scores generally falling below **10**. 
+* **Generation Collapse**: In translation and summarization tasks, models exhibit severe semantic collapse, with BLEU scores generally falling below **10**. 
 
 
 
@@ -91,5 +80,3 @@ If you use this benchmark in your research, please cite our work:
 ```
 
 ---
-
-Would you like me to create the actual `README.md` file for you to download, or help you with the code to move your files into a new folder now?
