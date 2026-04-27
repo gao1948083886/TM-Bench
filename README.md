@@ -1,10 +1,10 @@
 # TM-Bench: Benchmarking Large Language Models on Low-Resource Traditional Mongolian
 
-[![Status: Under Review](https://img.shields.io/badge/Status-Under%20Review%20@%20SIGIR%2026-orange.svg)]()
-[![Data: Partial Release](https://img.shields.io/badge/Data-Partial%20Release-blue.svg)]()
+[![Status: Accepted](https://img.shields.io/badge/Status-Accepted%20@%20SIGIR%202026-brightgreen.svg)]()
+[![Data: Full Release](https://img.shields.io/badge/Data-Full%20Release-blue.svg)]()
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)]() 
 
-> 📢 **Important Notice**: The paper corresponding to this project has been submitted to **SIGIR 2026** and is currently under review. At this stage, this repository provides a partial release of sample data to demonstrate the task formats and data structures. The complete dataset and code will be fully open-sourced upon acceptance.
+> 📢 **Important Notice**: Our paper has been **accepted by SIGIR 2026**. This repository now provides the full TM-Bench release, including the complete benchmark data, evaluation code, and baseline result files.
 
 ## 📖 Introduction
 
@@ -20,18 +20,24 @@ Due to the absence of a systematic evaluation framework, the performance of LLMs
 
 ## 📊 Dataset and Task Overview
 
-This benchmark covers both Natural Language Understanding (NLU) and Natural Language Generation (NLG) dimensions. The core components of TM-Bench are as follows (the current repository contains partial sample instances):
+This benchmark covers both Natural Language Understanding (NLU) and Natural Language Generation (NLG) dimensions. The dataset statistics are listed below (aligned with Table 1 in the paper):
 
-| Task Type | Dataset | Size | Mix (%) (Translation / Expert / Semi-automated) | Domain Examples |
+| Dataset | Task | Size | Mix (%) (Translation / Expert / Semi-automated) | Domain |
 | :--- | :--- | :--- | :--- | :--- |
-| **Topic Classification (TopicClf)** | `TM-AGNews` | 2,082 | 55% / 15% / 30% | Tech, Sports, Grassland Culture |
-| **Semantic Similarity (SemSim)** | `TM-MRPC` | 2,091 | 50% / 20% / 30% | Encyclopedia, Folklore |
-| **Natural Language Inference (NLI)** | `TM-MNLI`, `TM-RTE`, `TM-QNLI` | 6,229 | ~56% / 11% / 32% | Fiction, History, Policy, Geography |
-| **Multiple-Choice QA (MCQA)** | `TM-HellaSwag`, `TM-MMLU`, `TM-ARC` | 5,960 | ~51% / 14% / 35% | Common Sense, Traditional Medicine, Local Textbooks |
-| **Machine Translation (MT)** | `TM-CMMT` (Mongolian ↔ Chinese) | 1,995 | 56% / 14% / 30% | Dialog, Ethnic Literature |
-| **Total** | **TM-Bench** | **18,357** | - | - |
+| **NLU** |  |  |  |  |
+| `TM-AGNews` | TopicClf | 2,082 | 55 / 15 / 30 | Tech, Sport, Grassland<sup>†</sup> |
+| `TM-MRPC` | SemSim | 2,091 | 50 / 20 / 30 | Encyclopedia, Folklore<sup>†</sup> |
+| `TM-MNLI` | NLI | 2,084 | 52 / 13 / 35 | Fiction, Gov., History<sup>†</sup> |
+| `TM-RTE` | NLI | 2,083 | 60 / 10 / 30 | News, Policy, Folklore<sup>†</sup> |
+| `TM-QNLI` | NLI | 2,062 | 58 / 12 / 30 | Wiki, Ethnic Geography<sup>†</sup> |
+| `TM-HellaSwag` | MCQA | 1,976 | 48 / 15 / 37 | Knowledge, Nomadic Life<sup>†</sup> |
+| `TM-MMLU` | MCQA | 1,987 | 51 / 14 / 35 | Science, Ethnic Medicine<sup>†</sup> |
+| `TM-ARC` | MCQA | 1,997 | 53 / 12 / 35 | Science, Local Textbooks<sup>†</sup> |
+| **NLG** |  |  |  |  |
+| `TM-CMMT` | Trans. | 1,995 | 56 / 14 / 30 | Dialog, Ethnic Literature<sup>†</sup> |
+| **Total** |  | **18,357** |  |  |
 
-> *For detailed data statistics, please refer to Table 1 in the paper.*
+> **†** denotes culturally specific domains.
 
 ## 💡 Key Experimental Findings
 
@@ -39,17 +45,9 @@ We conducted systematic evaluations on representative open-source models, includ
 1. **NLU Tasks**: Model performance lags significantly behind high-resource languages, with only a few models (e.g., Gemma3-27B, Qwen3-32B) performing slightly above the random baseline.
 2. **NLG Tasks**: Both automatic metrics and double-blind human evaluations indicate that current models suffer from severe "semantic collapse" when generating Traditional Mongolian, frequently producing unreadable gibberish.
 
-## 🚀 Release Roadmap
-
-- [x] **v0 (Current - Under Review)**: Release a partial subset of the final dataset to demonstrate task formats and data structures.
-- [ ] **v1.0 (Full Release - Upon Acceptance)**: Upon acceptance of the paper, the following will be fully open-sourced:
-  - 📦 The complete benchmark dataset with 18,357 instances.
-  - 💻 Full evaluation code and baseline model inference scripts.
-  - 📈 Detailed experimental configurations and output results for all evaluated models.
-
 ## 📝 Citation
 
-If TM-Bench inspires or helps your research, please consider citing our work once the paper is officially published:
+If TM-Bench inspires or helps your research, please cite our paper:
 
 ```bibtex
 @inproceedings{gao2026tmbench,
@@ -58,3 +56,4 @@ If TM-Bench inspires or helps your research, please consider citing our work onc
   booktitle={Proceedings of the 49th International ACM SIGIR Conference on Research and Development in Information Retrieval},
   year={2026}
 }
+```
